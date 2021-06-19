@@ -1,21 +1,19 @@
-# For Java 8, try this
-# FROM openjdk:8-jdk-alpine
+FROM maven:3.8.1-adoptopenjdk-11 as build
+WORKDIR /app
+COPY . .
+RUN mvn install
 
 # For Java 11, try this
 FROM adoptopenjdk/openjdk11:alpine-jre
 
-# Refer to Maven build -> finalName
-ARG JAR_FILE=target/spring-boot-web.jar
+# cd /app
+WORKDIR /app
 
-# cd /opt/app
-WORKDIR /opt/app
+#COPY ${JAR_FILE} spring-boot-web.jar
+COPY --from=build /app/target/spring-boot-web.jar /app/app.jar
 
-# cp target/spring-boot-web.jar /opt/app/app.jar
-COPY ${JAR_FILE} app.jar
+EXPOSE 8080
+ENTRYPOINT ["sh", "-c"]
+CMD ["java -jar app.jar"]
 
-# java -jar /opt/app/app.jar
-ENTRYPOINT ["java","-jar","app.jar"]
-
-## sudo docker run -p 8080:8080 -t docker-spring-boot:1.0
-## sudo docker run -p 80:8080 -t docker-spring-boot:1.0
-## sudo docker run -p 443:8443 -t docker-spring-boot:1.0
+## docker run -p 8080:8080 -t spring-boot-web:1.0

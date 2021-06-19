@@ -4,10 +4,9 @@
 	<modelVersion>4.0.0</modelVersion>
 
 	<groupId>com.txt</groupId>
-	<artifactId>jenkinsfile-spring-boot</artifactId>
+	<artifactId>spring-jenkins-pipleline</artifactId>
 	<version>1.0</version>
-	<name>jenkinsfile-spring-boot</name>
-	<url></url>
+	<name>spring-jenkins-pipleline</name>
 
 	<parent>
 		<groupId>org.springframework.boot</groupId>
