@@ -15,7 +15,7 @@ pipeline {
 		stage("Test") {
 			steps {
 				echo "Test Stage"
-				sh "mvn test -Dspring.profiles.active=test"
+				sh "mvn test"
 				//step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
 			}
 		}
