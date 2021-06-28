@@ -18,7 +18,7 @@ pipeline {
 				//sh "mvn test"
 				//step([$class: 'JUnitResultArchiver', testResults: '**/target/surefire-reports/TEST-*.xml'])
 				withMaven(maven : 'apache-maven-3.8.1') {
-					bat 'mvn test'
+					sh 'mvn test'
 				}
 			}
 		}
