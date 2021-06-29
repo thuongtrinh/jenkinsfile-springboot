@@ -13,7 +13,7 @@ public class StartApplication {
 	@GetMapping("/")
 	public String index(final Model model) {
 		model.addAttribute("title", "Jenkinsfile + Docker + Spring Boot");
-		model.addAttribute("msg", "Welcome to the Jenkinsfile and docker container!");
+		model.addAttribute("msg", "Welcome to the Jenkinsfile pipleline and docker container!");
 		return "index";
 	}
 
