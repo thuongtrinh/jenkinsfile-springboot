@@ -2,7 +2,7 @@ pipeline {
 	agent any
 
 	environment {
-		DOCKER_IMAGE = "thuongtx/spring-jenkins-pipleline"
+		DOCKER_IMAGE = 'thuongtx/spring-jenkins-pipleline'
 	}
 
 	stages {
@@ -49,7 +49,7 @@ pipeline {
 
 				//clean to save disk
 				sh 'docker image rm ${DOCKER_IMAGE}:${DOCKER_TAG}'
-				//sh 'docker image rm ${DOCKER_IMAGE}:latest'
+				sh 'docker image rm ${DOCKER_IMAGE}:latest'
 			}
 		}
 	}
