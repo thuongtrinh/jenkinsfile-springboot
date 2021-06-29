@@ -2,7 +2,7 @@ pipeline {
 	agent any
 
 	environment {
-		DOCKER_IMAGE = "thuongtx/spring-jenkins-pipleline"
+		DOCKER_IMAGE = 'thuongtx/spring-jenkins-pipleline'
 	}
 
 	stages {
