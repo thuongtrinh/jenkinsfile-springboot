@@ -12,14 +12,14 @@ pipeline {
 			}
 		}
 
-		stage('Test') {
-			steps {
-				echo 'Test Stage'
-				withMaven(maven : 'apache-maven-3.8.1') {
-					sh 'mvn test'
-				}
-			}
-		}
+//		stage('Test') {
+//			steps {
+//				echo 'Test Stage'
+//				withMaven(maven : 'apache-maven-3.8.1') {
+//					sh 'mvn test'
+//				}
+//			}
+//		}
 
 //		stage('Build') {
 //			steps {
