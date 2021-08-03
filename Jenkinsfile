@@ -21,7 +21,6 @@ pipeline {
 //			}
 //		}
 
-
 //		stage('Build') {
 //			steps {
 //				withDockerRegistry(credentialsId: 'Docker-Hub', url: 'https://index.docker.io/v1/') {
